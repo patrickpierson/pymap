@@ -9,6 +9,7 @@ from PIL import Image
 
 
 urls = (
+  '/', 'Index',
   '/location', 'Index',
   '/map', 'Map',
   '/images/(.*)', 'ImageDisplay',
@@ -53,6 +54,9 @@ class Map(object):
 class Submit(object):
     def POST(self):
         print "submitting!!!"
+        form = web.input(location="Location")
+        loc = "%s" % (form.location)
+        print loc
         return render.submit()
 
 class ImageDisplay(object):

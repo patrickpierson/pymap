@@ -5,9 +5,18 @@ $if loc:
     <br>
     <img src="images/map.png" alt="map">
 
-    <h1>Submit to us</h1>
+    <h1>Search again?</h1>
+
+    <form action="/location" method="POST">
+        New Location: <input type="text" name="location">
+        <br/>
+        <input type="submit">
+    </form>
+
+    <h1>Submit to us!</h1>
 
     <form action="/submit" method="POST">
+        <input type="hidden" name="location" value="$loc">
         <input type="submit">
     </form>
 
